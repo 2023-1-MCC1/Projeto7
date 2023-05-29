@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://efxh3m8twcr8"]
+
+[ext_resource type="Script" path="res://scripts/TelaInicial.cs" id="1_honlq"]
+[ext_resource type="Texture2D" uid="uid://havpay5avdou" path="res://assets/background/BGTelaInicial.jpg" id="1_oaa5m"]
+[ext_resource type="FontFile" uid="uid://dcis5qyihay6h" path="res://files/Symtext.ttf" id="2_bt4su"]
+
+[node name="TelaInicial" type="Node2D"]
+script = ExtResource("1_honlq")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(2.04255, 1.14894)
+texture = ExtResource("1_oaa5m")
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0.929412, 0.478431, 0.152941, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 45
+text = "EcoPescaria"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desc" type="Label" parent="."]
+offset_top = 59.0
+offset_right = 1152.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.929412, 0.478431, 0.152941, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 27
+text = "Pesque consciente, não deixe os peixes serem extintos!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonIniciar" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 311.0
+offset_right = 760.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 40
+text = "Iniciar"
+flat = true
+
+[node name="ButtonCredito" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 383.0
+offset_right = 760.0
+offset_bottom = 445.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 40
+text = "Creditos"
+flat = true
+
+[node name="ButtonSair" type="Button" parent="."]
+offset_left = 374.0
+offset_top = 457.0
+offset_right = 760.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 40
+text = "Sair do jogo"
+flat = true
+
+[connection signal="pressed" from="ButtonIniciar" to="." method="_on_button_iniciar_pressed"]
+[connection signal="pressed" from="ButtonCredito" to="." method="_on_button_credito_pressed"]
+[connection signal="pressed" from="ButtonSair" to="." method="_on_button_sair_pressed"]
