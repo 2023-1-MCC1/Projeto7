@@ -56,7 +56,7 @@ Basta apenas baixar o arquivo `EcoPescaria.exe` contido na pasta `bin`, e execut
 
 ## 📂 Patch Notes:
 
-### Notas completas: 
+### Notas completas: [Github Releases](https://github.com/2023-1-MCC1/Projeto7/releases)
 
 ### Versão 0.8.0.0: Inicialização do projeto no repositório oficial
 
