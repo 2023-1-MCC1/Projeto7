@@ -177,6 +177,10 @@ public partial class JogoPrincipal : Node2D
 			primavera.Show();
 		}
 
+		if(game.extintos >= game.extintosLim){
+			GD.Print("PERDEU");
+			GetTree().ChangeSceneToFile("res://scenes/TelaDerrota.tscn");
+		}
 	}
 
 	//funcoes da area de pesca
