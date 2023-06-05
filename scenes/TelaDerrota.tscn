@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://xw1s2lfab864"]
+[gd_scene load_steps=4 format=3 uid="uid://dem0h7q0iy5rg"]
 
-[ext_resource type="Script" path="res://scenes/TelaDerrota.cs" id="1_ju85a"]
 [ext_resource type="Texture2D" uid="uid://havpay5avdou" path="res://assets/background/BGTelaInicial.jpg" id="1_r7anv"]
+[ext_resource type="Script" path="res://scripts/TelaDerrota.cs" id="1_tddhy"]
 [ext_resource type="FontFile" uid="uid://dcis5qyihay6h" path="res://files/Symtext.ttf" id="2_lld7k"]
 
-[node name="TelaDerrota" type="Node2D"]
-script = ExtResource("1_ju85a")
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tddhy")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -21,6 +21,7 @@ theme_override_font_sizes/font_size = 45
 text = "EcoPescaria"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Desc" type="Label" parent="."]
 offset_top = 59.0
@@ -32,6 +33,7 @@ theme_override_font_sizes/font_size = 27
 text = "Você perdeu! Seja mais responsável da proxima vez!"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonReiniciar" type="Button" parent="."]
 offset_left = 374.0
@@ -45,6 +47,7 @@ theme_override_fonts/font = ExtResource("2_lld7k")
 theme_override_font_sizes/font_size = 40
 text = "Reiniciar"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonVoltarInicio" type="Button" parent="."]
 offset_left = 374.0
@@ -58,6 +61,7 @@ theme_override_fonts/font = ExtResource("2_lld7k")
 theme_override_font_sizes/font_size = 40
 text = "Tela inicial"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonSair" type="Button" parent="."]
 offset_left = 374.0
@@ -71,6 +75,7 @@ theme_override_fonts/font = ExtResource("2_lld7k")
 theme_override_font_sizes/font_size = 40
 text = "Sair do jogo"
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="ButtonReiniciar" to="." method="_on_button_reiniciar_pressed"]
 [connection signal="pressed" from="ButtonVoltarInicio" to="." method="_on_button_voltar_inicio_pressed"]

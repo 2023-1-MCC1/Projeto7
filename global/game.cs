@@ -59,6 +59,7 @@ public partial class game : Node
 	}
 	
 	public void pegar(){
+		var random = new RandomNumberGenerator();
 		pontos += 10;
 		GD.Print("pegou!");
 		if(peixe == "Atum"){
@@ -75,6 +76,7 @@ public partial class game : Node
 		}
 		else if(peixe == "Dourado"){
 			descobertas[4] = peixe;
+			pontos += 200;
 		}
 		else if(peixe == "Leao"){
 			descobertas[5] = peixe;
@@ -89,9 +91,73 @@ public partial class game : Node
 			descobertas[8] = peixe;
 		}
 
+		var extinguiu = random.RandiRange(0, 100);
+		var chanceNormal = 85;
+		var chanceEstacao = 65;
+		var chanceDourado = 20;
+
+		//salmão:
+		if(peixe == "Salmao"){
+			if(estacao != "verao" && extinguiu >= chanceNormal){
+				extintos += 1;
+				GD.Print("Você extinguiu o salmão!");
+			}
+			else if(estacao == "verao" && extinguiu >= chanceEstacao){
+				extintos += 1;
+				GD.Print("Você extinguiu o salmão!");
+			}
+		}
+
+		//tilápia:
+		if(peixe == "Tilapia"){
+			if(estacao != "inverno" && extinguiu >= chanceNormal){
+				extintos += 1;
+				GD.Print("Você extinguiu a tilápia!");
+			}
+			else if(estacao == "inverno" && extinguiu >= chanceEstacao){
+				extintos += 1;
+				GD.Print("Você extinguiu a tilápia!");
+			}
+		}
+
+		//atum
+		if(peixe == "Atum"){
+			if(estacao != "primavera" && extinguiu >= chanceNormal){
+				extintos += 1;
+				GD.Print("Você extinguiu o atum!");
+			}
+			else if(estacao == "primavera" && extinguiu >= chanceEstacao){
+				extintos += 1;
+				GD.Print("Você extinguiu o atum!");
+			}
+		}
+
+		//tainha
+		if(peixe == "Tainha"){
+			if(estacao != "outono" && extinguiu >= chanceNormal){
+				extintos += 1;
+				GD.Print("Você extinguiu a tainha!");
+			}
+			else if(estacao == "outono" && extinguiu >= chanceEstacao){
+				extintos += 1;
+				GD.Print("Você extinguiu a tainha!");
+			}
+		}
+
+		//dourado
+		if(peixe == "Dourado" && extinguiu >= chanceDourado){
+			extintos += 1;
+			GD.Print("Você extinguiu o dourado!");
+		}
 	}
 
 	public void soltar(){
 		GD.Print("soltou!");
+	}
+
+	public void verificarVitoria(){
+		if(pontos >= pontosLim){
+
+		}
 	}
 }
