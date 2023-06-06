@@ -17,7 +17,7 @@ public partial class JogoPrincipal : Node2D
 	public Sprite2D AtumInterr, SalmaoInterr, TainhaInterr, TilapiaInterr, DouradoInterr, LeaoInterr, PalhacoInterr, LanternaInterr, CascudoInterr;
 
 	//variaveis de estado do jogo
-	public bool pescando, pescado;
+	public bool pescando, pescado, condicaoVitoria;
 	public int estacao;
 	
 	//funções do jogo
@@ -67,6 +67,7 @@ public partial class JogoPrincipal : Node2D
 		pescando = false;
 		pescado = false;
 		estacao = 0;
+		condicaoVitoria = false;
 
 		UI.Hide();
 		rod.Hide();
@@ -180,6 +181,20 @@ public partial class JogoPrincipal : Node2D
 		if(game.extintos >= game.extintosLim){
 			GD.Print("PERDEU");
 			GetTree().ChangeSceneToFile("res://scenes/TelaDerrota.tscn");
+		}
+
+		if(game.pontos >= game.pontosLim){
+			
+			if(game.descobertas[0] == "Atum" && game.descobertas[1] == "Salmao" && game.descobertas[2] == "Tainha" && game.descobertas[3] == "Tilapia" && game.descobertas[5] == "Leao" && game.descobertas[6] == "Palhaco" && game.descobertas[7] == "Lanterna" && game.descobertas[8] == "Cascudo"){
+				condicaoVitoria = true;
+			}
+
+			GD.Print("DEBUG:\n condicaoVitoria = " + condicaoVitoria);
+
+			if(condicaoVitoria){
+				GD.Print("GANHOU");
+				GetTree().ChangeSceneToFile("res://scenes/TelaVitoria.tscn");
+			}
 		}
 	}
 
