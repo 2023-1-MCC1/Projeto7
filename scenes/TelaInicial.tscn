@@ -35,9 +35,9 @@ vertical_alignment = 1
 
 [node name="ButtonIniciar" type="Button" parent="."]
 offset_left = 374.0
-offset_top = 311.0
+offset_top = 244.0
 offset_right = 760.0
-offset_bottom = 378.0
+offset_bottom = 311.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.929412, 0.478431, 0.152941, 1)
@@ -48,6 +48,19 @@ flat = true
 
 [node name="ButtonCredito" type="Button" parent="."]
 offset_left = 374.0
+offset_top = 316.0
+offset_right = 760.0
+offset_bottom = 383.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.929412, 0.478431, 0.152941, 1)
+theme_override_fonts/font = ExtResource("2_bt4su")
+theme_override_font_sizes/font_size = 40
+text = "Creditos"
+flat = true
+
+[node name="ButtonTutorial" type="Button" parent="."]
+offset_left = 374.0
 offset_top = 383.0
 offset_right = 760.0
 offset_bottom = 445.0
@@ -56,7 +69,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.929412, 0.478431, 0.152941, 1)
 theme_override_fonts/font = ExtResource("2_bt4su")
 theme_override_font_sizes/font_size = 40
-text = "Creditos"
+text = "Tutorial"
 flat = true
 
 [node name="ButtonSair" type="Button" parent="."]
@@ -74,4 +87,5 @@ flat = true
 
 [connection signal="pressed" from="ButtonIniciar" to="." method="_on_button_iniciar_pressed"]
 [connection signal="pressed" from="ButtonCredito" to="." method="_on_button_credito_pressed"]
+[connection signal="pressed" from="ButtonTutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="ButtonSair" to="." method="_on_button_sair_pressed"]

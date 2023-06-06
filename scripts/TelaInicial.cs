@@ -24,8 +24,16 @@ public partial class TelaInicial : Node2D
 		GetTree().ChangeSceneToFile("res://scenes/TelaCreditos.tscn");
 	}
 	
+	private void _on_button_tutorial_pressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/TelaTutorial.tscn");
+	}
+	
 	private void _on_button_sair_pressed()
 	{
 		GetTree().Quit();
 	}
 }
+
+
+
