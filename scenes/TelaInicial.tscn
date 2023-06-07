@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://efxh3m8twcr8"]
+[gd_scene load_steps=6 format=3 uid="uid://efxh3m8twcr8"]
 
 [ext_resource type="Script" path="res://scripts/TelaInicial.cs" id="1_honlq"]
 [ext_resource type="Texture2D" uid="uid://havpay5avdou" path="res://assets/background/BGTelaInicial.jpg" id="1_oaa5m"]
 [ext_resource type="FontFile" uid="uid://dcis5qyihay6h" path="res://files/Symtext.ttf" id="2_bt4su"]
+[ext_resource type="AudioStream" uid="uid://dacavfiyagkx5" path="res://assets/sons/ButtonClick.wav" id="4_edrsv"]
+[ext_resource type="AudioStream" uid="uid://d3l6vep0vvq4b" path="res://assets/sons/StartClick.wav" id="5_fwcly"]
 
 [node name="TelaInicial" type="Node2D"]
 script = ExtResource("1_honlq")
@@ -84,6 +86,12 @@ theme_override_fonts/font = ExtResource("2_bt4su")
 theme_override_font_sizes/font_size = 40
 text = "Sair do jogo"
 flat = true
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_edrsv")
+
+[node name="StartPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fwcly")
 
 [connection signal="pressed" from="ButtonIniciar" to="." method="_on_button_iniciar_pressed"]
 [connection signal="pressed" from="ButtonCredito" to="." method="_on_button_credito_pressed"]

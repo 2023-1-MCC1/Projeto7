@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://yua4y01t4cqt"]
+
+[ext_resource type="AudioStream" uid="uid://c4gadrp81yy3p" path="res://assets/sons/BGLoop.wav" id="1_4mmnh"]
+[ext_resource type="AudioStream" uid="uid://dacavfiyagkx5" path="res://assets/sons/ButtonClick.wav" id="2_2q14e"]
+[ext_resource type="AudioStream" uid="uid://d3l6vep0vvq4b" path="res://assets/sons/StartClick.wav" id="3_ufi3y"]
+[ext_resource type="AudioStream" uid="uid://dxhlrp8ejbh7u" path="res://assets/sons/step_sound.wav" id="4_omnix"]
+
+[node name="SoundFX" type="Node"]
+
+[node name="BGLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4mmnh")
+
+[node name="ButtonCLick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2q14e")
+
+[node name="StartClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ufi3y")
+
+[node name="StepSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_omnix")

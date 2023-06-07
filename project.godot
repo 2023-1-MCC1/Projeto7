@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 [autoload]
 
 Game="*res://global/game.cs"
+SoundFx="*res://objects/SoundFx.tscn"
 
 [display]
 

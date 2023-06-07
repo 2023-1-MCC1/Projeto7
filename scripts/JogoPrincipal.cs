@@ -6,11 +6,15 @@ public partial class JogoPrincipal : Node2D
 	//classes do jogo
 	game game = new game();
 
+	//!Color amarelo = new Color(235, 140, 52);
+	//!Color vermelho = new Color(235, 52, 52);
+	//!Color verde = new Color(52, 235, 52);
+
 	//variaveis de elementos do jogo
 	public Sprite2D rod, rodF, verao, outono, inverno, primavera;
 	public CharacterBody2D Player;
 	public Node2D UI;
-	public Label pontos, extintos;
+	public Label pontos, extintos, peixeAtual;
 	public AnimatedSprite2D pesca;
 
 	public Sprite2D Atum, Salmao, Tainha, Tilapia, Dourado, Leao, Palhaco, Lanterna, Cascudo;
@@ -28,6 +32,7 @@ public partial class JogoPrincipal : Node2D
 		pesca = GetNode<AnimatedSprite2D>("Player/PeixesNaVara");
 		Player = GetNode<CharacterBody2D>("Player");
 		UI = GetNode<Node2D>("UI");
+		peixeAtual = GetNode<Label>("Player/PeixePescado");
 
 		pontos = GetNode<Label>("UI/LabelPontos");
 		extintos = GetNode<Label>("UI/LabelExtintos");
@@ -76,8 +81,11 @@ public partial class JogoPrincipal : Node2D
 		outono.Hide();
 		inverno.Hide();
 		primavera.Hide();
+		peixeAtual.Hide();
 
 		pesca.Play("Idle");
+
+		
 
 		GD.Print("DEBUG:\n Rod = " + rod + "\n PLayer = " + Player + "\n UI = " + UI + "\n pontos = " + pontos + "\n extintos = " + extintos + "\n verao = " + verao + "\n outono = " + outono + "\n inverno = " + inverno + "\n primavera = " + primavera);
 
@@ -99,31 +107,44 @@ public partial class JogoPrincipal : Node2D
 
 				if(game.peixe == "Atum"){
 					pesca.Play("Atum");
+					peixeAtual.Text = "Peixe: Atum";
 				}
 				if(game.peixe == "Salmao"){
 					pesca.Play("Salmao");
+					peixeAtual.Text = "Peixe: Salmão";
 				}
 				if(game.peixe == "Tainha"){
 					pesca.Play("Tainha");
+					peixeAtual.Text = "Peixe: Tainha";
 				}
 				if(game.peixe == "Tilapia"){
 					pesca.Play("Tilapia");
+					peixeAtual.Text = "Peixe: Tilapia";
 				}
 				if(game.peixe == "Dourado"){
 					pesca.Play("Dourado");
+					peixeAtual.Text = "Peixe: Dourado";
 				}
 				if(game.peixe == "Leao"){
 					pesca.Play("Leao");
+					peixeAtual.Text = "Peixe: Peixe Leão";
 				}
 				if(game.peixe == "Palhaco"){
 					pesca.Play("Palhaco");
+					peixeAtual.Text = "Peixe: Peixe Palhaço";
 				}
 				if(game.peixe == "Lanterna"){
 					pesca.Play("Lanterna");
+					peixeAtual.Text = "Peixe: Peixe Lanterna";
 				}
 				if(game.peixe == "Cascudo"){
 					pesca.Play("Cascudo");
+					peixeAtual.Text = "Peixe: Cascudo";
 				}
+
+				//!if(game.extinto == true){
+				//!	peixeAtual.AddThemeColorOverride("font_color", new Color(235, 140, 52));
+				//!}
 			}
 		}
 
@@ -189,10 +210,7 @@ public partial class JogoPrincipal : Node2D
 				condicaoVitoria = true;
 			}
 
-			GD.Print("DEBUG:\n condicaoVitoria = " + condicaoVitoria);
-
 			if(condicaoVitoria){
-				GD.Print("GANHOU");
 				GetTree().ChangeSceneToFile("res://scenes/TelaVitoria.tscn");
 			}
 		}
@@ -204,6 +222,7 @@ public partial class JogoPrincipal : Node2D
 		if(body == Player){
 			pescando = true;
 			rod.Show();
+			peixeAtual.Show();
 			//GD.Print("ENTROU:\n Body = " + body + "\n PLayer = " + Player);
 		}
 	}
@@ -215,6 +234,8 @@ public partial class JogoPrincipal : Node2D
 			rod.Hide();
 			rodF.Hide();
 			pesca.Play("Idle");
+			peixeAtual.Hide();
+			peixeAtual.Text = "";
 			//GD.Print("SAIU:\n Body = " + body + "\n PLayer = " + Player);
 
 			if(pescado){

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b72o07iwqqdux"]
+[gd_scene load_steps=28 format=3 uid="uid://b72o07iwqqdux"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_qbvck"]
 [ext_resource type="Texture2D" uid="uid://ba3ivfkhgmn0h" path="res://assets/player/Idle (32 x 32).png" id="2_u1efe"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://covlv58tl2w1r" path="res://assets/peixes/Salmao.png" id="12_x20b5"]
 [ext_resource type="Texture2D" uid="uid://dn4jhr7bkybmu" path="res://assets/peixes/Tainha.png" id="13_f8r0i"]
 [ext_resource type="Texture2D" uid="uid://civ4aknndrq4c" path="res://assets/peixes/Tilapia.png" id="15_vfgjo"]
+[ext_resource type="FontFile" uid="uid://dcis5qyihay6h" path="res://files/Symtext.ttf" id="17_jqogc"]
+[ext_resource type="AudioStream" uid="uid://dxhlrp8ejbh7u" path="res://assets/sons/step_sound.wav" id="18_kevqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v487w"]
 
@@ -216,5 +218,16 @@ rotation = -1.5708
 scale = Vector2(0.216, 0.216)
 sprite_frames = SubResource("SpriteFrames_hnjq3")
 animation = &"Lanterna"
+
+[node name="PeixePescado" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -51.0
+offset_bottom = -31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_jqogc")
+theme_override_font_sizes/font_size = 11
+
+[node name="FootSteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_kevqk")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

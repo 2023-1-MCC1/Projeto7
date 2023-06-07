@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://n8ktpirbn673"]
+[gd_scene load_steps=20 format=3 uid="uid://n8ktpirbn673"]
 
 [ext_resource type="Script" path="res://scripts/JogoPrincipal.cs" id="1_2cvfd"]
 [ext_resource type="Texture2D" uid="uid://bhv7qt06y0yqw" path="res://assets/tilesets/Assets.png" id="1_2gfjb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bc0hstpga6avs" path="res://assets/decors/Decors.png" id="4_6yqif"]
 [ext_resource type="PackedScene" uid="uid://8dv1iykobil3" path="res://objects/UI.tscn" id="6_2unto"]
 [ext_resource type="PackedScene" uid="uid://4jgq4lk8gr1o" path="res://objects/BG.tscn" id="7_hx8mp"]
+[ext_resource type="AudioStream" uid="uid://c4gadrp81yy3p" path="res://assets/sons/BGLoop.wav" id="8_aenel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j6bj"]
 texture = ExtResource("1_2gfjb")
@@ -2223,13 +2224,18 @@ shape = SubResource("RectangleShape2D_5tnni")
 position = Vector2(11, 405)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 45.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_u6xmu")]
 position = Vector2(296, 473)
 
 [node name="BackGround" parent="." instance=ExtResource("7_hx8mp")]
+
+[node name="AudioBg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_aenel")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="body_entered" from="AreaDePesca" to="." method="_on_area_de_pesca_body_entered"]
 [connection signal="body_exited" from="AreaDePesca" to="." method="_on_area_de_pesca_body_exited"]

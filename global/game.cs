@@ -14,6 +14,8 @@ public partial class game : Node
 
 	public static string estacao;
 
+	public static bool extinto = false;
+
 	public static String[] descobertas = new String[9];
 
 	public void pescar(){
@@ -92,7 +94,7 @@ public partial class game : Node
 		}
 
 		var extinguiu = random.RandiRange(0, 100);
-		var chanceNormal = 85;
+		var chanceNormal = 95;
 		var chanceEstacao = 65;
 		var chanceDourado = 20;
 
@@ -100,10 +102,12 @@ public partial class game : Node
 		if(peixe == "Salmao"){
 			if(estacao != "verao" && extinguiu >= chanceNormal){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu o salmão!");
 			}
 			else if(estacao == "verao" && extinguiu >= chanceEstacao){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu o salmão!");
 			}
 		}
@@ -112,10 +116,12 @@ public partial class game : Node
 		if(peixe == "Tilapia"){
 			if(estacao != "inverno" && extinguiu >= chanceNormal){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu a tilápia!");
 			}
 			else if(estacao == "inverno" && extinguiu >= chanceEstacao){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu a tilápia!");
 			}
 		}
@@ -124,10 +130,12 @@ public partial class game : Node
 		if(peixe == "Atum"){
 			if(estacao != "primavera" && extinguiu >= chanceNormal){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu o atum!");
 			}
 			else if(estacao == "primavera" && extinguiu >= chanceEstacao){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu o atum!");
 			}
 		}
@@ -136,10 +144,12 @@ public partial class game : Node
 		if(peixe == "Tainha"){
 			if(estacao != "outono" && extinguiu >= chanceNormal){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu a tainha!");
 			}
 			else if(estacao == "outono" && extinguiu >= chanceEstacao){
 				extintos += 1;
+				extinto = true;
 				GD.Print("Você extinguiu a tainha!");
 			}
 		}
@@ -147,6 +157,7 @@ public partial class game : Node
 		//dourado
 		if(peixe == "Dourado" && extinguiu >= chanceDourado){
 			extintos += 1;
+			extinto = true;
 			GD.Print("Você extinguiu o dourado!");
 		}
 	}
