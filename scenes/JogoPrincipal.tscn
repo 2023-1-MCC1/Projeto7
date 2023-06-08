@@ -2224,7 +2224,7 @@ shape = SubResource("RectangleShape2D_5tnni")
 position = Vector2(11, 405)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 45.0
+wait_time = 10.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("3_u6xmu")]
