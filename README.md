@@ -48,8 +48,6 @@ Ao se posicionar no **pier a direita**, seu personagem irá sacar sua vara de pe
 
 ## 📦 Como baixar:
 
-**`A RESOLVER!!!`**
-
 Basta apenas baixar o arquivo `EcoPescaria.exe` contido na pasta `bin`, e executá-lo.
 
 ---
@@ -58,22 +56,17 @@ Basta apenas baixar o arquivo `EcoPescaria.exe` contido na pasta `bin`, e execut
 
 ### Notas completas: [Github Releases](https://github.com/2023-1-MCC1/Projeto7/releases)
 
-### Versão 0.8.0.0: Inicialização do projeto no repositório oficial
+### Versão 1.0.0.0:
 
 Mudanças:
-- Peixes são renderizados na vara ao pesca-los;
-- Vara de pesca muda de sprite ao pescar um peixe;
-  
-A fazer:
-- Label que indica se o peixe foi pego ou solto;
-- Roleta para extinguir ou não o peixe, dependendo da estação;
+ - Jogo completo lançado no github, muito obrigado a todos que acompanharam!
 
 
 ---
 
 ## 📝 Licença:
 
-O projeto e todos os seus assets fazem parte do acordo CCO - Creative Commons, ou seja, podem ser usados livremente para qualquer fim, sem necessidade de permissão ou citação.
+O projeto e todos os seus assets fazem parte do acordo CC0 - Creative Commons, ou seja, podem ser usados livremente para qualquer fim, sem necessidade de permissão ou citação.
 
 A licença pode ser encontrada em sua totalidade no link abaixo:
 
